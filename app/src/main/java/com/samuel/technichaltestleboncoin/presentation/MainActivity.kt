@@ -1,7 +1,8 @@
-package com.samuel.technichaltestleboncoin
+package com.samuel.technichaltestleboncoin.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.samuel.technichaltestleboncoin.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
