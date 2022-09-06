@@ -1,6 +1,6 @@
 package com.samuel.technichaltestleboncoin.data.remote.dto
 
-import com.samuel.technichaltestleboncoin.domain.model.Album
+import com.samuel.technichaltestleboncoin.data.local.AlbumEntity
 
 data class AlbumDto(
     val albumId: Int,
@@ -10,11 +10,13 @@ data class AlbumDto(
     val url: String
 )
 
-fun AlbumDto.toAlbum(): Album{
-    return Album(
+fun AlbumDto.toAlbumEntity(): AlbumEntity{
+    return AlbumEntity(
         albumId = albumId,
         id = id,
         thumbnailUrl = thumbnailUrl,
         title = title
     )
 }
+
+

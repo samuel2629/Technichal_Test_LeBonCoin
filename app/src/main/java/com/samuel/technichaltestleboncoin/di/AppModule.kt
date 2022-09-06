@@ -1,9 +1,14 @@
 package com.samuel.technichaltestleboncoin.di
 
+import android.app.Application
+import androidx.room.Room
 import com.samuel.technichaltestleboncoin.common.Constant
+import com.samuel.technichaltestleboncoin.data.local.AlbumDao
+import com.samuel.technichaltestleboncoin.data.local.AlbumDatabase
 import com.samuel.technichaltestleboncoin.data.remote.AlbumApi
 import com.samuel.technichaltestleboncoin.data.repository.AlbumRepositoryImpl
 import com.samuel.technichaltestleboncoin.domain.repository.AlbumRepository
+import com.samuel.technichaltestleboncoin.domain.use_case.get_albums.GetAlbumsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,7 +33,19 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideAlbumRepository(api: AlbumApi): AlbumRepository{
-        return AlbumRepositoryImpl(api)
+    fun provideAlbumDatabase(application: Application) : AlbumDatabase{
+        return Room.databaseBuilder(application, AlbumDatabase::class.java, "album_db").build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAlbumRepository(api: AlbumApi, db: AlbumDatabase): AlbumRepository{
+        return AlbumRepositoryImpl(api, db.dao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAlbums(repository: AlbumRepository): GetAlbumsUseCase{
+        return GetAlbumsUseCase(repository)
     }
 }
