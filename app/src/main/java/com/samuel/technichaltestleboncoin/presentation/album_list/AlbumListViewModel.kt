@@ -1,5 +1,7 @@
 package com.samuel.technichaltestleboncoin.presentation.album_list
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,7 +20,7 @@ class AlbumListViewModel @Inject constructor(
 ): ViewModel(){
 
     private val _state = MutableLiveData<AlbumListState>()
-    val state: LiveData<AlbumListState> = _state
+    var state: LiveData<AlbumListState> = _state
 
     init {
         getAlbums()
