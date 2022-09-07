@@ -10,16 +10,57 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="@dimen/margin_top_progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:visibility="visible"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_top_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/album_list_fragment_rv"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:id="@+id/album_list_fragment_error_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/album_list_fragment_error_iv"
+            android:src="@drawable/ic_baseline_thumb_down_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/width_height_error_imageview"
+            android:layout_height="@dimen/width_height_error_imageview"
+            android:contentDescription="@string/error_imageview" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/album_list_fragment_error_tv"
+            android:layout_marginTop="@dimen/margin_top_error_textview"
+            android:textSize="@dimen/size_error_textview"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/album_list_fragment_error_iv"
+            app:layout_constraintStart_toStartOf="@id/album_list_fragment_error_iv"
+            app:layout_constraintEnd_toEndOf="@id/album_list_fragment_error_iv"
+            android:layout_marginHorizontal="@dimen/margin_horizontal_error_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/album_list_fragment_error_btn"
+            app:layout_constraintTop_toBottomOf="@id/album_list_fragment_error_tv"
+            app:layout_constraintStart_toStartOf="@id/album_list_fragment_error_iv"
+            app:layout_constraintEnd_toEndOf="@id/album_list_fragment_error_iv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

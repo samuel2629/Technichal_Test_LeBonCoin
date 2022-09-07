@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- album_list_fragment.xml -->
+    <dimen name="margin_top_progressbar">48dp</dimen>
+    <dimen name="margin_top_recyclerview">8dp</dimen>
+    <dimen name="margin_horizontal_error_textview">24dp</dimen>
+    <dimen name="margin_top_error_textview">8dp</dimen>
+    <dimen name="size_error_textview">18sp</dimen>
+    <dimen name="width_height_error_imageview">100dp</dimen>
+
+    <!-- album_item.xml -->
+    <dimen name="margin_horizontal_cardview">16dp</dimen>
+    <dimen name="margin_vertical_cardview">4dp</dimen>
+    <dimen name="corner_radius_cardview">5dp</dimen>
+    <dimen name="elevation_cardview">10dp</dimen>
+    <dimen name="padding_constraint_layout">16dp</dimen>
+    <dimen name="padding_horizontal_textview">8dp</dimen>
+</resources>

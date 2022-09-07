@@ -9,10 +9,10 @@ import androidx.room.Query
 interface AlbumDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAlbum(albums: List<AlbumEntity>)
+    suspend fun insertAlbums(albums: List<AlbumEntity>)
 
-    @Query("DELETE FROM albumentity WHERE albumId IN(:albumsId)")
-    suspend fun deleteAlbum(albumsId: List<Int>)
+    @Query("DELETE FROM albumentity")
+    suspend fun deleteAlbums()
 
     @Query("SELECT * FROM albumentity")
     suspend fun getAlbums() : List<AlbumEntity>

@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Technichal Test LeBonCoin</string>
     <string name="unexpected_error_message">An unexpected error occured</string>
     <string name="error_imageview">error_imageview</string>
     <string name="retry">RETRY</string>
