@@ -3,7 +3,6 @@ package com.samuel.technichaltestleboncoin.di
 import android.app.Application
 import androidx.room.Room
 import com.samuel.technichaltestleboncoin.common.Constant
-import com.samuel.technichaltestleboncoin.data.local.AlbumDao
 import com.samuel.technichaltestleboncoin.data.local.AlbumDatabase
 import com.samuel.technichaltestleboncoin.data.remote.AlbumApi
 import com.samuel.technichaltestleboncoin.data.repository.AlbumRepositoryImpl
@@ -13,9 +12,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttp
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
